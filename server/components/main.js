@@ -1,3 +1,3 @@
 export default function Main({ children }) {
-  return <main className="min-h-full">{children}</main>;
+  return <main className="">{children}</main>;
 }
