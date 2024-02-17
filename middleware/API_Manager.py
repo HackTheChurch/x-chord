@@ -17,7 +17,7 @@ class API_Manager(object):
         json_object = json.dumps(dictionary, indent=2)
         with open("../tmp/log/request_"+timestamp.strftime("%Y-%m-%d_%I-%M-%S_%f")+".json", "w") as outfile:
             outfile.write(json_object)
-        with open("../tmp/sloka/cisloSloky.txt", "w") as outfileCisloSloky:
+        with open("../tmp/sloka/cislosloky.txt", "w") as outfileCisloSloky:
 
             outfileCisloSloky.write(str(self.computeCisloSloky(request)))
         pass
