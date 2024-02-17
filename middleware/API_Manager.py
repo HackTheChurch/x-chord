@@ -19,7 +19,7 @@ class API_Manager(object):
             outfile.write(json_object)
         with open("../tmp/sloka/cisloSloky.txt", "w") as outfileCisloSloky:
 
-            outfileCisloSloky.write(self.computeCisloSloky(request))
+            outfileCisloSloky.write(str(self.computeCisloSloky(request)))
         pass
 
     def computeCisloSloky(self, request):
@@ -30,11 +30,12 @@ class API_Manager(object):
         if(request == "up"):
                 if (self.cisloSloky <6):
                     self.cisloSloky +=1
+        return self.cisloSloky
 
 
 
 if __name__ == "__main__":
     print(datetime.now())
     apmng = API_Manager()
-    apmng.sendRequest("down")
+    apmng.sendRequest("up")
     pass
