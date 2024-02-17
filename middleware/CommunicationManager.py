@@ -45,14 +45,14 @@ class CommunicationManager(object):
             request = self.decodeRequest(self.data)
             if  request != None:
                 self.apiManager.sendRequest(request)
-            time.sleep(0.1)
+            time.sleep(0.05)
             
 
     def decodeRequest(self, data) -> str:
         toReturn = None
-        if((data & BTN_UP_STATE) and not self.dataLastState & BTN_UP_STATE):
+        if(not(data & BTN_UP_STATE) and self.dataLastState & BTN_UP_STATE):
             toReturn = REQUEST_UP
-        if((data & BTN_DOWN_STATE) and not self.dataLastState & BTN_DOWN_STATE):
+        if(not(data & BTN_DOWN_STATE) and self.dataLastState & BTN_DOWN_STATE):
             toReturn = REQUEST_DOWN
         self.dataLastState = data
         return toReturn
