@@ -2,20 +2,22 @@ import fs from "fs";
 import path from "path";
 
 export default function handler(req, res) {
-  const dir = fs.readdirSync("../");
-  console.log(dir);
-  // Define the file path relative to the root of your server directory
-  const filePath = path.join(process.cwd(), "data", "yourfile.txt");
+  const dir = fs.readdirSync("../tmp/");
 
-  // Read the file asynchronously
-  fs.readFile(filePath, "utf8", (err, data) => {
-    if (err) {
-      // Handle errors (e.g., file not found)
-      res.status(500).json({ error: "Error reading file" });
-      return;
-    }
+  let instructions = new Array();
 
-    // Send the file content back to the client
-    res.status(200).json({ content: data });
+  // read files
+  dir.map((file) => {
+    const content = fs.readFileSync(`../tmp/${file}`, "utf8");
+    const json = JSON.parse(content);
+    instructions.push(json);
   });
+
+  // delete files
+  dir.map((file) => {
+    fs.unlinkSync(`../tmp/${file}`);
+  });
+
+  // Send the file content back to the client
+  res.status(200).json({ content: instructions });
 }
