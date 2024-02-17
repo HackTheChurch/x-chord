@@ -1,6 +1,6 @@
 import smbus
 import time
-import API_Manager
+from API_Manager import API_Manager
 from gpiozero import Button
 
 I2CBUS = 1
