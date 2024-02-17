@@ -21,7 +21,7 @@ export default function Home() {
           </span>
         </div>
         <div className="mt-4 mb-8 text-xl leading-8">
-          <p className="my-4">
+          <p className="my-4" id="0">
             R: Baba yetu, yetu uliye
             <br />
             Mbinguni yetu, yetu, amina!
@@ -39,7 +39,7 @@ export default function Home() {
             <br />
             Jina lako litukuzwe
           </p>
-          <p className="mb-2 mt-12">
+          <p className="mb-2 mt-12" id="1">
             1. Utupe leo chakula chetu
             <br />
             Tunachohitaji utusamehe
@@ -48,7 +48,7 @@ export default function Home() {
             <br />
             Kama nasi tunavyowasamehe
           </p>
-          <p classname="my-4">
+          <p className="my-4">
             Waliotukosea usitutie
             <br />
             Katika majaribu, lakini
@@ -57,7 +57,7 @@ export default function Home() {
             <br />
             Mwovu, milele!
           </p>
-          <p className="mb-2 mt-12">
+          <p className="mb-2 mt-12" id="2">
             R: Baba yetu, yetu uliye
             <br />
             Mbinguni yetu, yetu, amina!
@@ -75,12 +75,12 @@ export default function Home() {
             <br />
             Jina lako litukuzwe
           </p>
-          <p className="mb-2 mt-12">
+          <p className="mb-2 mt-12" id="3">
             B: Ufalme wako ufike utakalo
             <br />
             Lifanyike duniani kama mbinguni. (Amina)
           </p>
-          <p className="mb-2 mt-12">
+          <p className="mb-2 mt-12" id="4">
             R: Baba yetu, yetu uliye
             <br />
             Mbinguni yetu, yetu, amina!
@@ -98,7 +98,7 @@ export default function Home() {
             <br />
             Jina lako litukuzwe
           </p>
-          <p className="mb-2 mt-12">
+          <p className="mb-2 mt-12" id="5">
             1. Utupe leo chakula chetu
             <br />
             Tunachohitaji utusamehe
