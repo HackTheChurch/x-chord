@@ -13,16 +13,35 @@ export default function Home() {
       const part = document.querySelector(`#part-${i}`);
       parts.push(part);
     }
-    parts[1].scrollIntoView({ behavior: "smooth" });
 
-    fetch("/api/controller.js")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("File content:", data.content);
-      })
-      .catch((error) => {
-        console.error("Error fetching file:", error);
-      });
+    let position = 0;
+
+    setInterval(() => {
+      fetch("/api/controller")
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log("File content:", data.content);
+
+          data.content.map((instruction) => {
+            switch (instruction.action) {
+              case "down":
+                position += 1;
+                position > 6 ? (position = 5) : null;
+                break;
+
+              case "up":
+                position -= 1;
+                position < 0 ? (position = 0) : null;
+                break;
+            }
+          });
+
+          parts[position].scrollIntoView({ behavior: "smooth" });
+        })
+        .catch((error) => {
+          console.error("Error fetching file:", error);
+        });
+    }, 500);
   });
   return (
     <>
