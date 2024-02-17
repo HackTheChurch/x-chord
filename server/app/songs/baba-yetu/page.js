@@ -14,29 +14,28 @@ export default function Home() {
       parts.push(part);
     }
 
-    let position = 0;
-
     setInterval(() => {
       fetch("/api/controller")
         .then((response) => response.json())
         .then((data) => {
           // console.log("File content:", data.content);
 
-          data.content.map((instruction) => {
-            switch (instruction.action) {
-              case "down":
-                position += 1;
-                position > 7 ? (position = 6) : null;
-                break;
+          // // Read sloka
+          // data.content.map((instruction) => {
+          //   switch (instruction.action) {
+          //     case "down":
+          //       position += 1;
+          //       position > 7 ? (position = 6) : null;
+          //       break;
 
-              case "up":
-                position -= 1;
-                position < 0 ? (position = 0) : null;
-                break;
-            }
-          });
+          //     case "up":
+          //       position -= 1;
+          //       position < 0 ? (position = 0) : null;
+          //       break;
+          //   }
+          // });
 
-          parts[position].scrollIntoView({ behavior: "smooth" });
+          parts[data.content.sloka].scrollIntoView({ behavior: "smooth" });
         })
         .catch((error) => {
           console.error("Error fetching file:", error);
@@ -45,11 +44,9 @@ export default function Home() {
   });
   return (
     <>
-      <Header />
+      <Header id="part-0" />
       <Main>
-        <h1 className="text-xl font-bold uppercase mt-12" id="part-0">
-          Baba yetu
-        </h1>
+        <h1 className="text-xl font-bold uppercase mt-12">Baba yetu</h1>
         <div className="mt-2">
           <span className="flex items-center">
             <IconAuthor className={"mr-2"} /> Christopher Tin
@@ -118,7 +115,7 @@ export default function Home() {
             <br />
             Lifanyike duniani kama mbinguni. (Amina)
           </p>
-          <p className="mb-2 pt-12" id="part-4">
+          <p className="mb-2 pt-12" id="part-5">
             R: Baba yetu, yetu uliye
             <br />
             Mbinguni yetu, yetu, amina!

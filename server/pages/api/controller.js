@@ -6,18 +6,22 @@ export default function handler(req, res) {
 
   let instructions = new Array();
 
-  // read files
-  dir.map((file) => {
-    const content = fs.readFileSync(`../tmp/${file}`, "utf8");
-    const json = JSON.parse(content);
-    instructions.push(json);
-  });
+  // // read files
+  // dir.map((file) => {
+  //   const content = fs.readFileSync(`../tmp/log/${file}`, "utf8");
+  //   const json = JSON.parse(content);
+  //   instructions.push(json);
+  // });
 
-  // delete files
-  dir.map((file) => {
-    fs.unlinkSync(`../tmp/${file}`);
-  });
+  // // delete files
+  // dir.map((file) => {
+  //   fs.unlinkSync(`../tmp/log/${file}`);
+  // });
+
+  const sloka = fs.readFileSync("../tmp/sloka/cislosloky.txt", "utf8");
 
   // Send the file content back to the client
-  res.status(200).json({ content: instructions });
+  res
+    .status(200)
+    .json({ content: { instruct: instructions, sloka: parseInt(sloka) } });
 }

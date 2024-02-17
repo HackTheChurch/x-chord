@@ -3,9 +3,12 @@ import IconHome from "./icons/home";
 import IconSetting from "./icons/settings";
 import { title } from "./variables";
 
-export default function Header() {
+export default function Header({ id }) {
   return (
-    <header className="w-full py-2 bg-black flex flex-row items-center justify-center">
+    <header
+      id={id}
+      className="w-full py-2 bg-black flex flex-row items-center justify-center"
+    >
       <div className="flex flex-row items-center justify-between max-w-[1000px] w-[90vw]">
         <Link href="/">
           <IconHome className={"cursor-pointer"} />
