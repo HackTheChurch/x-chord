@@ -35,17 +35,18 @@ class CommunicationManager(object):
                 self.data = self.bus.read_byte(self.address)
                 self.bus.write_byte(self.address, self.data)
                 
-                while(not self.communicationReady.is_pressed):
+                while(self.communicationReady.is_pressed and self.isCommunicationRunning):
                     time.sleep(0.1)
                     self.data = self.bus.read_byte(self.address)
                     self.bus.write_byte(self.address, self.data)
+                    print("communication is not working correctly")
             except:
                 print("error communication")
+            request = self.decodeRequest(self.data)
+            if  request != None:
+                self.apiManager.sendRequest(request)
+            time.sleep(0.1)
             
-            if self.decodeRequest(self.data) != None:
-                self.apiManager.sendRequest(self.decodeRequest(self.data))
-            time.sleep(0.01)
-            print(self.data)
 
     def decodeRequest(self, data) -> str:
         toReturn = None
