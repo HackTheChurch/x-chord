@@ -8,11 +8,8 @@ export default function Home() {
     <>
       <Header />
       <Main>
-        <h1 className="text-xl font-bold uppercase">O projektu</h1>
-        <p>
-          Tato webová stránka slouží jako hlavní kontroler pro ovládání projektu{" "}
-          <strong>{title}</strong>.
-        </p>
+        <h1 className="text-xl font-bold uppercase">Nastavení</h1>
+        <p>Tato stránka umožňuje základní konfiguraci.</p>
       </Main>
       <Footer />
     </>
