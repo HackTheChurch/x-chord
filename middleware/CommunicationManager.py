@@ -40,6 +40,8 @@ class CommunicationManager(object):
                     self.data = self.bus.read_byte(self.address)
                     self.bus.write_byte(self.address, self.data)
                     print("communication is not working correctly")
+            except KeyboardInterrupt:
+                exit()
             except:
                 print("error communication")
             request = self.decodeRequest(self.data)
