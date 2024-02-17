@@ -14,7 +14,7 @@ export default function Home() {
           Tato webová stránka slouží jako hlavní kontroler pro ovládání projektu{" "}
           <strong>{title}</strong>.
         </p>
-        <div className="w-full flex flex-row items-center justify-between my-4">
+        <div className="w-full flex flex-row items-center justify-between my-4 flex-wrap">
           <Link
             href="/numbers"
             className="p-2 border-white border cursor-pointer rounded hover:scale-105 transition-all"
@@ -28,10 +28,10 @@ export default function Home() {
             Playlist
           </Link>
           <Link
-            href="/project"
+            href="/songs"
             className="p-2 border-white border cursor-pointer rounded hover:scale-105 transition-all"
           >
-            Projekce
+            Seznam&nbsp;písní
           </Link>
         </div>
       </Main>
