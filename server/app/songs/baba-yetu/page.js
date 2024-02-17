@@ -4,8 +4,6 @@ import Header from "@/components/header";
 import IconAuthor from "@/components/icons/author";
 import IconInput from "@/components/icons/input";
 import Main from "@/components/main";
-import { title } from "@/components/variables";
-import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -16,6 +14,15 @@ export default function Home() {
       parts.push(part);
     }
     parts[1].scrollIntoView({ behavior: "smooth" });
+
+    fetch("/api/controller.js")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("File content:", data.content);
+      })
+      .catch((error) => {
+        console.error("Error fetching file:", error);
+      });
   });
   return (
     <>
