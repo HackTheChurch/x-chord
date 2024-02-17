@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Main from "@/components/main";
 import { title } from "@/components/variables";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -13,6 +14,26 @@ export default function Home() {
           Tato webová stránka slouží jako hlavní kontroler pro ovládání projektu{" "}
           <strong>{title}</strong>.
         </p>
+        <div className="w-full flex flex-row items-center justify-between my-4">
+          <Link
+            href="/numbers"
+            className="p-2 border-white border cursor-pointer rounded hover:scale-105 transition-all"
+          >
+            Číselník
+          </Link>
+          <Link
+            href="/playlist"
+            className="p-2 border-white border cursor-pointer rounded hover:scale-105 transition-all"
+          >
+            Playlist
+          </Link>
+          <Link
+            href="/project"
+            className="p-2 border-white border cursor-pointer rounded hover:scale-105 transition-all"
+          >
+            Projekce
+          </Link>
+        </div>
       </Main>
       <Footer />
     </>
