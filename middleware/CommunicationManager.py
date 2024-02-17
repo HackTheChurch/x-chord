@@ -24,7 +24,7 @@ class CommunicationManager(object):
         self.isCommunicationRunning = True
 
         self.data = None    #data via I2C
-        self.dataLastState = None
+        self.dataLastState = 0
         self.request = None
         self.apiManager = API_Manager()
         
@@ -38,10 +38,11 @@ class CommunicationManager(object):
                 while(not self.communicationReady.is_pressed):
                     time.sleep(0.1)
                     self.data = self.bus.read_byte(self.address)
+                    self.bus.write_byte(self.address, self.data)
             except:
                 print("error communication")
             
-            self.apiManager.sendRequest(self.decodeRequest())
+            self.apiManager.sendRequest(self.decodeRequest(self.data))
             time.sleep(0.01)
             print(self.data)
 
