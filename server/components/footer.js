@@ -5,7 +5,11 @@ export default function Footer() {
     <footer className="w-full bg-black min-h-24 flex flex-col justify-center items-center">
       <p className="">
         Vytvořeno na akci{" "}
-        <Link href="https://hackthechurch.cz/" target="_blank">
+        <Link
+          href="https://hackthechurch.cz/"
+          target="_blank"
+          className="underline cursor-pointer"
+        >
           hackthechurch.cz
         </Link>
         .
