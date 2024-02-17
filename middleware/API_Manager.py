@@ -14,7 +14,7 @@ class API_Manager(object):
             "timestamp":str(timestamp)
         }
         json_object = json.dumps(dictionary, indent=2)
-        with open("tmp/request_"+timestamp.strftime("%Y-%m-%d_%I-%M-%S_%f")+".json", "w") as outfile:
+        with open("../tmp/request_"+timestamp.strftime("%Y-%m-%d_%I-%M-%S_%f")+".json", "w") as outfile:
             outfile.write(json_object)
         pass
 

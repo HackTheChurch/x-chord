@@ -42,7 +42,8 @@ class CommunicationManager(object):
             except:
                 print("error communication")
             
-            self.apiManager.sendRequest(self.decodeRequest(self.data))
+            if self.decodeRequest(self.data) != None:
+                self.apiManager.sendRequest(self.decodeRequest(self.data))
             time.sleep(0.01)
             print(self.data)
 
