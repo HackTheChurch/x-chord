@@ -1,9 +1,0 @@
-List of product and ideas for MIDI interfacing on RPI
-For now, I2C communnication is used as placeholder. 
-
-Pisound (commertialy sold, used in projects for pi synthetizer) https://blokas.io/pisound/
-
-Midi board for RPI (https://cz.rs-online.com/web/p/moduly-hat-a-doplnky-raspberry-pi/2148065)
-
-Midi to usb converter (many sites offer comertial products, e.g. https://kytary.cz/klavesy/midi/midi-prevodniky/)
-
