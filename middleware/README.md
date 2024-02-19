@@ -6,44 +6,43 @@ Reads data from I2C bus and, process them, it creates requests for server using 
 
 Check wheather Python is installed:
 
-'''bash
+```bash
 sudo apt install python3
 
 #verify installation
 
 python3 --version
 
-'''
+```
 
 Install smbus library for I2C communication:
 
-'''bash
+```bash
 sudo apt install python3-smbus
 
-'''
+```
 
 Enable I2C on Raspberry:
-
-'''bash
+```bash
 sudo raspi-config
-'''
+```
 
 In the Raspberry Pi Software Configuration Tool, navigate to ‘Interfacing Options’. 
 In the pop-up window, enable the Arm I2C interface and select ‘Yes’.
 
 Reboot Raspberry:
 
-'''bash
+```bash
 sudo reboot
-'''
+```
 
 Connect SDA to pin GPIO2 and SCL to pin GPIO3, the check wire connect to GPIO17.
 
 Run this project:
 
-'''bash
+```bash
 python3 CommunicationManager.py
-'''
+```
 
 ## Learn more
 
