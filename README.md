@@ -1,4 +1,4 @@
-# hackthechurch-midhub
+# x-chord
 
 ## Problem to solve
 This repository contains our proof of concept on a possible way of solving problems with score synchronization. The "Schola" conductor frequently plays an instruments so he cannot use his hands to communicate with the rest of the choir. 
